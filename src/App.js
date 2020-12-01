@@ -23,6 +23,7 @@ function App() {
 
   const funcComp = flow([filteredData, sortedDataById])
 
+
   return (
     <div className="App">
       <input
