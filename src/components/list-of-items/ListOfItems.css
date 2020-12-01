@@ -1,0 +1,4 @@
+.ListOfItems {
+    background-color: orange;
+    grid-area: listOfItems;
+}

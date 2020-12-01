@@ -1,7 +1,9 @@
 import React from 'react';
 import './Main.css';
 
-export const Main = () => (
-		<div className='Main'/>
+export const Main = ({children}) => (
+	<div className='Main'>
+		{children}
+	</div>
 	);
 

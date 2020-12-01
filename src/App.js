@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import { useEffect, useState } from 'react';
 import { sortBy, flow } from 'lodash';
-import {Layout, Header, Footer, Main, Sidebar} from './components';
+import {Layout, Header, Footer, Main, Sidebar, Searchbar, ListOfItems} from './components';
 
 function App() {
   const [data, setData] = useState([])
@@ -18,27 +18,17 @@ function App() {
     })(searchText)
   }, [searchText])
 
-  const filteredData = (data) => data.filter(item => item.state === "Virginia");
-
-  const sortedDataById = (data) => sortBy(data, ['id'])  
-
-  const funcComp = flow([filteredData, sortedDataById])
-
   return (
     <Layout>
       <Header/>
       <Sidebar/>
-      <Main/>
+      <Main>
+        <Searchbar setSearchText={setSearchText} />
+        <ListOfItems data={data} />
+      </Main>
       <Footer/>
     </Layout>
   );
 }
 
 export default App;
-{/*<input*/}
-{/* onChange={event => setSearchText(event.target.value)}/>*/}
-{/* <ul>*/}
-{/*  {funcComp(data).map(({name, id, state}) => */}
-{/*    <li key={id} className='itemName' >{`${id} ${name} / ${state}`}</li>*/}
-{/*  )}*/}
-{/* </ul>*/}
