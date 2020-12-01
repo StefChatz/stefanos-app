@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css';
 import { useEffect, useState } from 'react';
 import { sortBy, flow } from 'lodash';
+import {Layout, Header, Footer, Main, Sidebar} from './components';
 
 function App() {
   const [data, setData] = useState([])
@@ -23,18 +24,21 @@ function App() {
 
   const funcComp = flow([filteredData, sortedDataById])
 
-
   return (
-    <div className="App">
-      <input
-       onChange={event => setSearchText(event.target.value)}/>
-       <ul>
-        {funcComp(data).map(({name, id, state}) => 
-          <li key={id} className='itemName' >{`${id} ${name} / ${state}`}</li>
-        )}
-       </ul>
-    </div>
+    <Layout>
+      <Header/>
+      <Sidebar/>
+      <Main/>
+      <Footer/>
+    </Layout>
   );
 }
 
 export default App;
+{/*<input*/}
+{/* onChange={event => setSearchText(event.target.value)}/>*/}
+{/* <ul>*/}
+{/*  {funcComp(data).map(({name, id, state}) => */}
+{/*    <li key={id} className='itemName' >{`${id} ${name} / ${state}`}</li>*/}
+{/*  )}*/}
+{/* </ul>*/}

@@ -1,0 +1,27 @@
+.Layout {
+    height: 100vh;
+    width: 100vw;
+    background-color: lightblue;
+
+    display: grid;
+    grid-template-rows: 60px 1fr 48px;
+    grid-template-columns:  48px 1fr;
+    grid-template-areas:
+            "sidebar header"
+            "sidebar main"
+            "sidebar footer";
+}
+
+@media only screen and (max-width: 600px) {
+    .Layout {
+        background-color: lightblue;
+
+        grid-template-rows: 60px 1fr 48px 48px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}
