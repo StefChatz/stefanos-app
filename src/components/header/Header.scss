@@ -13,8 +13,18 @@
     height: 60px;
     width: 50px;
     background-color: blue;
+    display: flex;
 }
+.Icon {
+    &.MuiSvgIcon-root {
+        height: 48px;
+        width: 48px;
+    }
+    margin: auto;
 
+
+
+}
 .SearchBar {
     height: 60px;
     width: 50px;
