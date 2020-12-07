@@ -1,6 +1,6 @@
 import {flow, sortBy} from 'lodash';
 import React from 'react';
-import './ListOfItems.css';
+import './ListOfItems.scss';
 
 export const ListOfItems = ({data}) => {
 
