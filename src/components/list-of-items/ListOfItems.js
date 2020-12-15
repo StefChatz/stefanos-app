@@ -13,11 +13,12 @@ export const ListOfItems = ({data}) => {
   return (
     <div className='ListOfItems'>
       <ul>
-        {(data).map((i) =>
-        {return (
-              <li key={i.id} className='itemName'>{`${i.id} ${i.name}`}</li>,
-
-        ))}}
+        {
+          data.map((i) => {
+            console.log('i', i)
+          return <li key={i.id} className='itemName'>{`${i.id} ${i.name}`}</li>
+          })
+        }
       </ul>
     </div>
   );
