@@ -1,2 +1,2 @@
-export { ListOfItems } from './ListOfItems';
+export {ListOfItems} from './ListOfItems';
 

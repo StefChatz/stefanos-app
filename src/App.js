@@ -1,23 +1,31 @@
-import React from 'react'
+import React from 'react';
 import './App.css';
-import { useEffect, useState } from 'react';
-import { sortBy, flow } from 'lodash';
-import {Layout, Header, Footer, Main, Sidebar, Searchbar, ListOfItems} from './components';
+import {useEffect, useState} from 'react';
+import {
+  Layout,
+  Header,
+  Footer,
+  Main,
+  Sidebar,
+  Searchbar,
+  ListOfItems,
+} from './components';
+import {allAppsUrl} from './api';
 
 function App() {
-  const [data, setData] = useState([])
-  const [searchText, setSearchText] = useState('')
+  const [data, setData] = useState([]);
+  const [searchText, setSearchText] = useState('');
 
   useEffect(()=>{
     (async (query) => {
       const response = await fetch(
-        `https://api.openbrewerydb.org/breweries/search?query=${query}`
+          allAppsUrl,
       );
       const data = await response.json();
       setData( data );
-    })(searchText)
-  }, [searchText])
-
+    })(searchText);
+  }, [searchText]);
+  console.log(data);
   return (
     <Layout>
       <Header/>

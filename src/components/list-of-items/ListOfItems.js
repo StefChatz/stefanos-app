@@ -1,22 +1,33 @@
-import {flow, sortBy} from 'lodash';
 import React from 'react';
 import './ListOfItems.scss';
+import PropTypes from 'prop-types';
 
 export const ListOfItems = ({data}) => {
+  // const filteredData = (data) => data.
+  //     filter((item) => item.state === 'Virginia');
+  //
+  // const sortedDataById = (data) => sortBy(data, ['id']);
+  //
+  // const funcComp = flow([filteredData, sortedDataById]);
 
-	const filteredData = (data) => data.filter(item => item.state === "Virginia");
+  return (
+    <div className='ListOfItems'>
+      <ul>
+        {(data).map((i) =>
+        {return (
+              <li key={i.id} className='itemName'>{`${i.id} ${i.name}`}</li>,
 
-	const sortedDataById = (data) => sortBy(data, ['id'])
+        ))}}
+      </ul>
+    </div>
+  );
+};
 
-	const funcComp = flow([filteredData, sortedDataById])
 
-	return(
-		<div className='ListOfItems'>
-			<ul>
-				{funcComp(data).map(({name, id, state}) =>
-					<li key={id} className='itemName'>{`${id} ${name} / ${state}`}</li>,
-				)}
-			</ul>
-		</div>
-	);
-}
+ListOfItems.propTypes = {
+  data: PropTypes.object,
+};
+
+ListOfItems.defaultProps = {
+  data: {},
+};
