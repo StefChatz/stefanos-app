@@ -2,7 +2,9 @@
 import React from 'react';
 import './Card.scss';
 
-export const Card = () => {
-  return 'dawdawd';
+export const Card = ({game}) => {
+  console.log('game', game)
+  
+  return <div/>;
 };
 

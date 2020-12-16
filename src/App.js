@@ -28,19 +28,14 @@ function App() {
     })(searchText);
   }, [searchText]);
   console.log(data);
+
   return (
     <Layout>
       <Header/>
       <Sidebar/>
       <Main>
         <Searchbar setSearchText={setSearchText} />
-        <ListOfItems >
-          {
-            data.map() => {
-            <Card data={data}/>
-            }
-          }
-        </ListOfItems>
+        <ListOfItems listOfGames={data} />
       </Main>
       <Footer/>
     </Layout>

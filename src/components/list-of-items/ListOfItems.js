@@ -1,7 +1,9 @@
+import {Card} from '../card';
 import React from 'react';
 import './ListOfItems.scss';
 import PropTypes from 'prop-types';
-export const ListOfItems = ({data}) => {
+
+export const ListOfItems = ({listOfGames}) => {
   // const filteredData = (data) => data.
   //     filter((item) => item.state === 'Virginia');
   //
@@ -13,17 +15,16 @@ export const ListOfItems = ({data}) => {
     <div className='ListOfItems'>
       <ul>
         {
-          data.map((i) => {
-            console.log('i', i);
+          listOfGames.map((game) => {
+            console.log('game', game);
             // eslint-disable-next-line max-len
-            return <li key={i._id}>{i.name}</li>;
+            return <Card game={game}/>;
           })
         }
       </ul>
     </div>
   );
 };
-
 
 ListOfItems.propTypes = {
   data: PropTypes.object,
