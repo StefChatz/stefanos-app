@@ -1,7 +1,6 @@
 import React from 'react';
 import './ListOfItems.scss';
 import PropTypes from 'prop-types';
-
 export const ListOfItems = ({data}) => {
   // const filteredData = (data) => data.
   //     filter((item) => item.state === 'Virginia');
@@ -15,8 +14,9 @@ export const ListOfItems = ({data}) => {
       <ul>
         {
           data.map((i) => {
-            console.log('i', i)
-          return <li key={i.id} className='itemName'>{`${i.id} ${i.name}`}</li>
+            console.log('i', i);
+            // eslint-disable-next-line max-len
+            return <li key={i._id}>{i.name}</li>;
           })
         }
       </ul>

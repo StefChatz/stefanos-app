@@ -9,6 +9,8 @@ import {
   Sidebar,
   Searchbar,
   ListOfItems,
+  Card,
+
 } from './components';
 import {allAppsUrl} from './api';
 
@@ -32,7 +34,13 @@ function App() {
       <Sidebar/>
       <Main>
         <Searchbar setSearchText={setSearchText} />
-        <ListOfItems data={data} />
+        <ListOfItems >
+          {
+            data.map() => {
+            <Card data={data}/>
+            }
+          }
+        </ListOfItems>
       </Main>
       <Footer/>
     </Layout>
