@@ -35,7 +35,9 @@ function App() {
       <Sidebar/>
       <Main>
         <Searchbar setSearchText={setSearchText} />
-        <ListOfItems listOfGames={data} />
+        <ListOfItems listOfGames={data} >
+          <Card></Card>
+        </ListOfItems>
       </Main>
       <Footer/>
     </Layout>

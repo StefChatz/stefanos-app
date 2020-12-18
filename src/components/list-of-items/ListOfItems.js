@@ -18,7 +18,10 @@ export const ListOfItems = ({listOfGames}) => {
           listOfGames.map((game) => {
             console.log('game', game);
             // eslint-disable-next-line max-len
-            return <Card game={game}/>;
+            return (
+              <Card key={game._id} game={game}/>
+
+            );
           })
         }
       </ul>

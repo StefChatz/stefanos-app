@@ -15,11 +15,12 @@ ul {
     box-sizing: border-box;
     list-style: none;
     padding: calc(var(--outer-spacing) - var(--item-spacing) / 2);
-    display: flex;
+    display: block;
     flex-flow: row wrap;
     width: 100%;
     margin: 0 auto;
-    justify-content: stretch;
+    justify-content: flex-start;
+
 
 /* On mobile this becomes a horizontal scrolling list */
     @media (max-width: 600px) {
@@ -38,26 +39,26 @@ ul {
         }
     }
 }
-
-li {
-    box-sizing: inherit;
-    display: inline-block; /* or inline-flex */
-    flex: 0 0 calc(100% / var(--items-per-row) - var(--item-spacing));
-    margin: calc(var(--item-spacing) / 2);
-
-    @media (max-width: 600px) {
-        flex: 0 0 100%;
-        margin: 0;
-
-    /* Item spacing */
-        & + & {
-            margin: 0 0 0 var(--item-spacing);
-        }
-    }
-
-    color: darkmagenta;
-    background: mistyrose;
-    padding: var(--item-spacing);
-    border-radius: 5px;
-
-}
+//
+//li {
+//    box-sizing: inherit;
+//    display: inline-block; /* or inline-flex */
+//    flex: 0 0 calc(100% / var(--items-per-row) - var(--item-spacing));
+//    margin: calc(var(--item-spacing) / 2);
+//
+//    @media (max-width: 600px) {
+//        flex: 0 0 100%;
+//        margin: 0;
+//
+//    /* Item spacing */
+//        & + & {
+//            margin: 0 0 0 var(--item-spacing);
+//        }
+//    }
+//
+//    color: darkmagenta;
+//    background: mistyrose;
+//    padding: var(--item-spacing);
+//    border-radius: 5px;
+//
+//}
