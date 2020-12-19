@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
@@ -26,7 +25,6 @@ export const Card = ({game}) => {
         <img className="tab_item_cap_img" src={headerImage}/>
       </div>
       <div className="tab_item_content">
-        {/* eslint-disable-next-line max-len */}
         <span className="tab_item_name" >{name}</span>
         {/* Conditional rendering*/}
         {linux && <AcUnitIcon/>}
@@ -35,10 +33,11 @@ export const Card = ({game}) => {
         <div className="tab_item_details">
           <span className="platform_img win" />
           <div className="tab_item_top_tags">
-            {/* eslint-disable-next-line max-len */}
             <li className="top_tag">{}</li>
           </div>
         </div>
+
+
       </div>
     </a>
   );
