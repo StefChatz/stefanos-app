@@ -13,14 +13,16 @@ export const ListOfItems = ({listOfGames}) => {
 
   return (
     <div className='ListOfItems'>
+      {/* <Card key={listOfGames?._id}></Card>*/}
       <ul>
         {
           listOfGames.map((game) => {
             console.log('game', game);
+
+
             // eslint-disable-next-line max-len
             return (
               <Card key={game._id} game={game}/>
-
             );
           })
         }
